@@ -1,11 +1,10 @@
-<div class="container"    fxLayout="column"  fxLayoutGap="10px">
-
+<div class="container"   fxLayout.sm="column"  fxLayout="column"  fxLayoutGap="10px" >
   <div fxFlex>
     <div>
         <h3>Menu</h3>
     </div>  
   </div>
-  <mat-list fxFlex>
+  <mat-list fxFlex="40">
     <mat-grid-list cols="2" rowspan="100px">
     <mat-grid-tile *ngFor="let dish of dishes">
       <img height="100px" src={{dish.image}} alt={{dish.name}}>
@@ -18,18 +17,4 @@
 
 </div>
 
-<div *ngIf="selectedDish">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <h3>{{selectedDish.name}}</h3>
-      </mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src = {{selectedDish.image}} />
-    <mat-card-content>
-      <p>{{selectedDish.description}}</p>
-    </mat-card-content>
-  </mat-card>
-
-
-</div>
+<app-dishdetails></app-dishdetails>

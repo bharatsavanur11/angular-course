@@ -1,0 +1,30 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <p>{{dish.name}}</p>
+    <img height="100px" src={{dish.image}} alt={{dish.name}}>
+  </div>
+
+  <div fxFlex="40">
+    <mat-list fxFlex="40">
+      <mat-list-item *ngFor="let comment of dish.comments" cols="1">
+        <p mat-line>
+          <span> {{comment.comment}} </span>
+        </p>
+        <p mat-line>
+          <span> {{comment.rating}} Stars</span>
+        </p>
+        <p mat-line>
+          <span> -- {{comment.author}} {{comment.date | date}} </span>
+        </p>
+      </mat-list-item>
+      </mat-list>
+  </div>
+
+</div>
