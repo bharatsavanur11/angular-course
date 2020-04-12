@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button'
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishDetailComponent } from './dishdetails/dishdetails.component';
+import {DishService} from './services/dish.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DishDetailComponent } from './dishdetails/dishdetails.component';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
