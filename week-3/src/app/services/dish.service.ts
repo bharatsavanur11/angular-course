@@ -12,17 +12,17 @@ export class DishService {
 
   constructor() { }
 
-   getDishes(): Dish[] {
-     return DISHES;
+   getDishes(): Promise<Dish[]> {
+     return Promise.resolve(DISHES);
    }
 
-   getDish(id: String) : Dish {
+   getDish(id: String) : Promise<Dish> {
     //use arrow function
-    return DISHES.filter((dish)=> (dish.id === id))[0]
+    return Promise.resolve(DISHES.filter((dish)=> (dish.id === id))[0]);
    }
 
-   getFeatured() : Dish{
-    return DISHES.filter((dish)=>(dish.featured))[0];
+   getFeatured() : Promise<Dish>{
+    return Promise.resolve(DISHES.filter((dish)=>(dish.featured))[0]);
    }
 
 }
