@@ -4,9 +4,10 @@
       <h3>Menu</h3>
     </div>
   </div>
-  <mat-list fxFlex="40">
+  <div fxFlex *ngIf="dishes">
+  <mat-list fxFlex="40" >
     <mat-grid-list cols="2" rowspan="100px">
-      <mat-grid-tile *ngFor="let dish of dishes" [routerLink] = "['/dishdetail',dish.id]" >
+      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
         <img height="100px" src={{dish.image}} alt={{dish.name}}>
         <mat-grid-tile-footer>
           <h1>{{dish.name | uppercase}}</h1>
@@ -14,5 +15,11 @@
       </mat-grid-tile>
     </mat-grid-list>
   </mat-list>
+ </div>
+  <div [hidden]="dishes">
+    <mat-spinner></mat-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+
 
 </div>

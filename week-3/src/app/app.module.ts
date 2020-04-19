@@ -33,6 +33,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import {PromotionService} from './services/promotion.service';
 import { LoginComponent } from './login/login.component';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [DishService,PromotionService],
